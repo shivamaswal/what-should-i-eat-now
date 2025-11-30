@@ -6,11 +6,8 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
-    container_name: food-api
     ports:
       - "8000:8000"
-    volumes:
-      - ./backend/food.db:/app/food.db  # Persist database
     environment:
       - PYTHONUNBUFFERED=1
     healthcheck:
@@ -18,21 +15,14 @@ services:
       interval: 30s
       timeout: 10s
       retries: 3
-    restart: unless-stopped
 
   # Frontend - React/Vite with Nginx
   frontend:
     build:
       context: ./frontend-v1
       dockerfile: Dockerfile
-    container_name: food-app
     ports:
       - "3000:80"
     depends_on:
       - backend
-    restart: unless-stopped
-
-networks:
-  default:
-    name: food-network
 
