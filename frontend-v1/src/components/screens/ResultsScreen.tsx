@@ -36,8 +36,8 @@ const fallbackSuggestions = [
   { id: 2, name: "Pizza", emoji: "🍕", cuisine: "fastfood", description: "Classic comfort food", avg_price: 350, is_vegetarian: true },
 ];
 
-// Use relative URL in production (Docker), absolute URL in development
-const API_URL = import.meta.env.PROD ? "" : "http://localhost:8000";
+// Use VITE_API_URL env var, fallback to relative URL for local docker-compose
+const API_URL = import.meta.env.VITE_API_URL || "";
 
 export const ResultsScreen = ({ answers, onRestart }: ResultsScreenProps) => {
   const [loading, setLoading] = useState(true);
