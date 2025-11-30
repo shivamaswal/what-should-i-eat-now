@@ -1,0 +1,20 @@
+# Dependencies (The usual culprits)
+node_modules/
+venv/
+env/
+
+# Mac System Files
+.DS_Store
+
+# Build outputs
+dist/
+build/
+.next/
+out/
+
+# Environment variables (Secrets)
+.env
+.env.local
+
+# Logs
+*.log

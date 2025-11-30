@@ -1,0 +1,25 @@
+# Virtual environment
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Database (will be created fresh or mounted)
+*.db
+
+# Git
+.git/
+.gitignore
+
+# Misc
+*.log
+.env.local
+
